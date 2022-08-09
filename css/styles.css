@@ -1,0 +1,414 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0px;
+}
+
+body, p { font-size: 24px; }
+
+input {
+	border: 0px;
+}
+
+button {
+	border: 0px;
+}
+
+#nav {
+	background-color: #333;
+	display: flex;
+	justify-content: space-between;
+}
+
+#logo {
+	padding-left: 100px;
+	font-size: 2.5em;
+	font-weight: bolder;
+	color: #00bcd4;
+	display: flex;
+	align-items: center;
+}
+
+#nav ul {
+	padding: 0;
+	display: flex;
+	margin-right: 100px;
+}
+
+#nav ul li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+	color: white;
+	position: relative;
+}
+
+#nav ul li { 
+	list-style-type: none;
+  	padding: 10px 20px;
+}
+
+#nav ul li a:before {
+	content: "";
+  	width: 0;
+  	height: 5px;
+  	background-color: #00bcd4;
+  	position: absolute;
+  	top: 120%;
+  	left: 0;
+  	transition: all 0.5s;
+}
+
+#nav ul li a:after {
+	content: "";
+	width: 0;
+	height: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 120%;
+	right: 0;
+	transition: all 0.5s;
+}
+
+#nav ul li a:hover:before { 
+	width: 50%;
+  	transform: translateX(100%);
+}
+
+#nav ul li a:hover:after {
+	width: 50%;
+  	transform: translateX(-100%);
+}
+
+#photoGallery {
+	display: flex;
+  	flex-wrap: wrap;
+  	min-width: 320px;
+}
+
+#photoGallery li {
+	list-style: none;
+}
+
+.card {
+	width: 25%;
+	overflow: hidden;
+	position: relative;
+}
+
+.card .content {
+	z-index: 2;
+	width: 100%;
+	position: absolute;
+	bottom: -100px;
+	transition: all 0.7s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	min-height: 100px;
+	background: #111;
+}
+
+.card .image {
+	z-index: 1;
+	height: 100%;
+}
+
+.card img {
+	height: 100%;
+	width: auto;
+	transition: all 0.5s ease;
+	transform: scale(1.2);
+	filter: grayscale(1);
+}
+
+.card img:hover {
+	filter: grayscale(0);
+}
+
+.card:hover .content {
+	bottom: 0px;
+	color: #fff;
+}
+
+.card:hover .image img {
+	transform: scale(1);
+}
+
+.card .content span:first-child {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+}
+
+.card .content span:last-child {
+	font-size: 14px;
+	color: #00bcd4;
+	text-align: center;
+	font-weight: 700;
+}
+
+.card .content a {
+	text-decoration: none;
+	text-transform: none;
+}
+
+#home {
+	margin: 0;
+    justify-content: center;
+	padding-top: 40px;
+    height: 50rem;
+    background-color: #333; /* For browsers that do not support gradients */
+    background-image: linear-gradient(170deg, #333 10%, #333 60%, #00bcd4 60.1%);
+}
+
+#home .rightimage{
+    width: 50%;
+    height: 70%;
+    display: flex;
+    float: right;
+    margin: 2% 10px 0px 0px;
+}
+
+#home .rightimage img{
+    margin-left: 15%;
+    border: 2px solid white;
+
+}
+
+#home .lefttext{
+	width: 40%;
+    height: 70%;
+    justify-content: center;
+    display:flex;
+    float: left ;   
+    margin: 2% 0px 0px 5%;
+    text-align: center;
+    overflow: hidden;
+}
+
+#home .lefttext .textwrap{
+	margin: 25% 10px 0px 0px;
+    width: 100%;
+    justify-content: center;
+    text-align: left;
+}
+
+#home .lefttext .textwrap h1{
+    width: 100%;
+    overflow-wrap: break-word;
+    font-size: 50px;
+    padding: 0;
+	margin: 20px 20px 0px 20px;
+    color: white;
+    justify-content: center;
+    text-align: left;
+}
+
+#home .lefttext .textwrap p{
+    margin: 0px 20px 0px 20px;
+    font-size: 20px;
+    padding: 0;
+    color: whitesmoke;
+    justify-content: center;
+    text-align: left;
+}
+
+#home .lefttext .textwrap button{
+    font-size: 20px;
+	font-weight: lighter;
+    margin: 40px 0 0 20px;
+    padding : 40px;
+	text-transform: uppercase;
+    border: 0;
+	color: white;
+    background-color: #00bcd4;
+}
+
+#home .lefttext .textwrap button:hover{
+    color: #333;
+    background-color: white;
+}
+
+#contactus {
+	margin: 0;
+    justify-content: center;
+	padding-top: 40px;
+    height: 50rem;
+    background-color: #333; /* For browsers that do not support gradients */
+    background-image: linear-gradient(-170deg, #333 60%, #333 10%, #00bcd4 60.1%);
+}
+
+#submit-form{
+	margin: auto;
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+	font-size: large;
+	background-color: #555;
+}
+
+.full-width{
+	grid-column: 1 / 3 ;
+}
+
+#submit-form input[type="text"] { 
+	border: 2px solid #333;
+}
+
+#submit-form input[type="text"]:focus-visible { 
+	outline: none;
+	border-radius: 0;
+	border: 2px solid #00bcd4;
+}
+
+#submit-form textarea {
+	border: 2px solid #333;
+	border-top: 0;
+}
+
+#submit-form textarea:focus-visible{
+	outline: none;
+	border-radius: 0;
+	border: 2px solid #00bcd4;
+}
+
+#submit-form #name{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 50px;
+}
+
+#submit-form #insta_id{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 50px;
+}
+
+#submit-form #message {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#submit-form input[type="checkbox"]{
+	cursor:pointer;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    background: #ffffff;
+    transition: all 250ms linear;
+    box-shadow: inset 0 0 0 4px #ffffff;
+    border: 1px solid #bfbfbf;
+	border-radius: none;
+} 
+
+#submit-form input[type="checkbox"]:checked{
+	border-color: #00bcd4;
+    background-color: #00bcd4;
+    box-shadow: inset 0 0 0 5px #ffffff;
+} 
+
+.end-message {
+	margin: 5px 0px 5px 0px;
+	display:inline-flex;
+	text-align: left;
+	justify-content: space-between;
+	text-anchor: middle;
+	color:white;
+	font-size: medium;
+	height: 30px;
+	width: 100%;
+}
+
+.terms {
+	padding-left: 20px;
+	width: 100%;
+}
+
+.submit-buttons {
+	height: 50px;
+	display: flex;
+	font-size: xx-large;
+	text-transform: uppercase;
+}
+
+.submit-btn {
+	height: 100%;
+	width: 50%;
+	background-color: #333;
+	color: #00bcd4;
+	text-transform: uppercase;
+	box-shadow: inset 0 0 0 2px #00bcd4;
+}
+
+.submit-btn:hover { 
+	background-color: #00bcd4;
+	color: white;
+}
+
+.reset-btn {
+	height: 100%;
+	width: 50%;
+	background-color: #333;
+	color: #bfbfbf;
+	box-shadow: inset 0 0 0 2px #bfbfbf;
+}
+
+.reset-btn:hover {
+	background-color: #bfbfbf;
+	color: white;
+}
+
+#submit-form h1 {
+	color: white;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+#submit-form h4 {
+	color: #bbb;
+	font-weight: lighter;
+	margin-top: 0;
+}
+
+#submit-form .footnote h4{
+	margin: 0;
+	float: right;
+	font-size: smaller;
+}
+
+.long-arrow-right {
+	display: block;
+	margin: 30px auto;
+	width: 25px;
+	height: 25px;
+	border-top: 2px solid #000;
+	border-left: 2px solid #000;
+	transform: rotate(135deg);
+}
+
+.long-arrow-right::after{
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
